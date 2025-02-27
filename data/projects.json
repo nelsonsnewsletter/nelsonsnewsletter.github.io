@@ -1,0 +1,18 @@
+{
+    "projects": [
+        {
+            "id": 1,
+            "title": "AI Newsletter Website",
+            "description": "A modern landing page built with HTML and CSS, featuring a newsletter signup for AI content creation tips.",
+            "image": "images/My Website Landing Page.png",
+            "link": "index.html"
+        },
+        {
+            "id": 2,
+            "title": "Project Portfolio",
+            "description": "A dynamic portfolio page using JavaScript to load project data from JSON, demonstrating basic CMS functionality.",
+            "image": "images/My Website Projects Page.png",
+            "link": "projects.html"
+        }
+    ]
+}
