@@ -24,29 +24,41 @@
     </div>
 
     <script>
-        async function loadProjects() {
-            try {
-                const response = await fetch('data/projects.json');
-                const data = await response.json();
-                
-                const projectsContainer = document.getElementById('projectsContainer');
-                
-                data.projects.forEach(project => {
-                    const projectCard = `
-                        <div class="project-card">
-                            <img src="${project.image}" alt="${project.title}">
-                            <h3>${project.title}</h3>
-                            <p>${project.description}</p>
-                            <div class="project-links">
-                                <a href="${project.link}" class="project-link">View Project →</a>
-                            </div>
+        const projectsData = {
+            "projects": [
+                {
+                    "id": 1,
+                    "title": "AI Newsletter Website",
+                    "description": "A modern landing page built with HTML and CSS, featuring a newsletter signup for AI content creation tips.",
+                    "image": "images/My Website Landing Page.png",
+                    "link": "index.html"
+                },
+                {
+                    "id": 2,
+                    "title": "Project Portfolio",
+                    "description": "A dynamic portfolio page using JavaScript to load project data from JSON, demonstrating basic CMS functionality.",
+                    "image": "images/My Website Projects Page.png",
+                    "link": "projects.html"
+                }
+            ]
+        };
+
+        function loadProjects() {
+            const projectsContainer = document.getElementById('projectsContainer');
+            
+            projectsData.projects.forEach(project => {
+                const projectCard = `
+                    <div class="project-card">
+                        <img src="${project.image}" alt="${project.title}">
+                        <h3>${project.title}</h3>
+                        <p>${project.description}</p>
+                        <div class="project-links">
+                            <a href="${project.link}" class="project-link">View Project →</a>
                         </div>
-                    `;
-                    projectsContainer.innerHTML += projectCard;
-                });
-            } catch (error) {
-                console.error('Error loading projects:', error);
-            }
+                    </div>
+                `;
+                projectsContainer.innerHTML += projectCard;
+            });
         }
 
         // Load projects when page loads
